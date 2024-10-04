@@ -60,10 +60,10 @@ export default function Home() {
 };
 
 export function EzbotTestComponent() {
-  const currentEzbot = useContext(EzbotContext);
-
-  if (currentEzbot !== null) {
-    return <p>Predictions: {currentEzbot.predictions}.</p>;
+  const {currentEzbot, setCurrentEzbot} = useContext(EzbotContext);
+  console.log(currentEzbot)
+  if (currentEzbot !== null && currentEzbot.predictions !== null) {
+    return <p>Predictions: {currentEzbot.predictions} existed.</p>;
   }
 
   return <p>No Predictions.</p>;
