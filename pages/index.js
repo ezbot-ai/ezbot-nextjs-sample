@@ -27,12 +27,12 @@ export default function Home() {
         return;
       }
       try {
-        await initEzbot(38); // Replace 0 with your project ID
-        // startActivityTracking({
-        //   minimumVisitLength: 2,
-        //   heartbeatDelay: 2,
-        // });
-        // trackPageView();
+        await initEzbot(0); // Replace 0 with your project ID
+        startActivityTracking({
+          minimumVisitLength: 2,
+          heartbeatDelay: 2,
+        });
+        trackPageView();
         makeVisualChanges();
         ezbotInit.current = true;
         setCurrentEzbot({predictions: window.ezbot.predictions})
